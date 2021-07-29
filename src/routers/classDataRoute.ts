@@ -7,6 +7,8 @@ router.get("/get", async (req: Request, res: Response) => {
 	try {
 		if (!req.body.cnKey) {
 			res.status(400).send("please give a cnKey");
+			log.info("Not given a cn key")
+			return
 		}
 		const baseURL = "https://vsb.mcgill.ca/vsb/getclassdata.jsp?";
 		const term = get_Term();
