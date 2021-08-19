@@ -6,7 +6,9 @@
 		"express": "^4.17.1",
 		"mongoose": "^5.12.14",
 		"pino": "^6.11.3",
-		"pino-pretty": "^5.1.0"
+		"pino-pretty": "^5.1.0",
+		"ts-node": "^10.0.0",
+		"typescript": "^4.3.4"
 	},
 	"devDependencies": {
 		"@types/body-parser": "^1.19.0",
@@ -15,9 +17,7 @@
 		"@types/mongoose": "^5.11.97",
 		"@types/node": "^15.12.4",
 		"@types/pino": "^6.3.8",
-		"rimraf": "^3.0.2",
-		"ts-node": "^10.0.0",
-		"typescript": "^4.3.4"
+		"rimraf": "^3.0.2"
 	},
 	"name": "find-seat-backend",
 	"description": "An API that allows students to get information about classes through course codes",
