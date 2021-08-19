@@ -1,2 +1,2 @@
 # vsb web scraper 
-a small program that reverse engenieers the website https://vsb.mcgill.ca/vsb/criteria.jsp?access=0&lang=en&tip=1&page=results&scratch=0&term=0&sort=none&filters=iiiiiiiii&bbs=&ds=&cams=Distance_Downtown_Macdonald_Off-Campus&locs=any&isrts= to retrieve course data about any course at mcgill using their api that was protected using a date and time manipulation which I then replicated. 
+a small program that reverse engenieers the website https://vsb.mcgill.ca/vsb/ to retrieve course data about any course at mcgill using their api that was protected using a date and time manipulation which I then replicated. 
