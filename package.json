@@ -15,16 +15,19 @@
 		"@types/mongoose": "^5.11.97",
 		"@types/node": "^15.12.4",
 		"@types/pino": "^6.3.8",
+		"rimraf": "^3.0.2",
 		"ts-node": "^10.0.0",
 		"typescript": "^4.3.4"
 	},
 	"name": "find-seat-backend",
-	"description": "A backend for a service that notifies students about open classes",
+	"description": "An API that allows students to get information about classes through course codes",
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "nodemon --config nodemon.json src/app.ts"
+		"dev": "nodemon --config nodemon.json src/app.ts",
+		"build": "rimraf ./build && tsc",
+		"start": "npm run build && node build/app.js"
 	},
 	"repository": {
 		"type": "git",

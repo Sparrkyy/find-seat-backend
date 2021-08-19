@@ -3,12 +3,12 @@ import axios, { ResponseType } from "axios";
 import log from "../logger";
 const router = express.Router() as Router;
 
-router.get("/get", async (req: Request, res: Response) => {
+router.get("/", async (req: Request, res: Response) => {
 	try {
 		if (!req.body.cnKey) {
 			res.status(400).send("please give a cnKey");
-			log.info("Not given a cn key")
-			return
+			log.info("Requested Failed: not given a cn key");
+			return;
 		}
 		const baseURL = "https://vsb.mcgill.ca/vsb/getclassdata.jsp?";
 		const term = get_Term();
@@ -22,7 +22,7 @@ router.get("/get", async (req: Request, res: Response) => {
 		res.status(200).send(classData);
 	} catch (e) {
 		log.info(e);
-		res.status(500).send("Error occured");
+		res.status(500).send("Error occured: Make sure the cnKey is a valid one");
 	}
 });
 
@@ -55,9 +55,6 @@ const parse_xml_course_data = (xml: string) => {
 	const courses = xml.match(regexForCourses);
 	const AllCourseResults: any[] = [];
 	courses!.forEach((course) => {
-		/**
-		 * @todo fit this any
-		 */
 		const singleCourse: any = {};
 		const regexForSingleCourse = /[A-Za-z]*="[^"]*"/gm;
 		const courseAttributes = course.match(regexForSingleCourse);
